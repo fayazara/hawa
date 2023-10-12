@@ -45,37 +45,37 @@ const sounds = [
   {
     name: "Rain",
     icon: "i-lucide-cloud-rain",
-    src: "src/assets/sounds/rain.mp3",
+    src: "/sounds/rain.mp3",
   },
   {
     name: "Thunder",
     icon: "i-lucide-cloud-lightning",
-    src: "src/assets/sounds/thunder.mp3",
+    src: "/sounds/thunder.mp3",
   },
   {
     name: "Wind",
     icon: "i-lucide-wind",
-    src: "src/assets/sounds/wind.mp3",
+    src: "/sounds/wind.mp3",
   },
   {
     name: "Campfire",
     icon: "i-lucide-flame-kindling",
-    src: "src/assets/sounds/campfire.mp3",
+    src: "/sounds/campfire.mp3",
   },
   {
     name: "Waves",
     icon: "i-lucide-waves",
-    src: "src/assets/sounds/waves.mp3",
+    src: "/sounds/waves.mp3",
   },
   {
     name: "Coffee Shop",
     icon: "i-lucide-coffee",
-    src: "src/assets/sounds/coffee-shop.mp3",
+    src: "/sounds/coffee-shop.mp3",
   },
   {
     name: "Forest",
     icon: "i-lucide-trees",
-    src: "src/assets/sounds/forest.mp3",
+    src: "/sounds/forest.mp3",
   },
 ];
 
