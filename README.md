@@ -1,7 +1,29 @@
-# Tauri + Vue 3
+# Hawa
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Hawa means air/breeze in Hindi.
 
-## Recommended IDE Setup
+Hawa is a simple, lightweight app that lives in your menubar that plays ambient sounds to help you focus on your work, or to help you relax.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## Stack
+1. Tauri
+2. Vue 3
+3. Tailwindcss
+4. Howler.js
+5. Radix vue
+
+## Development
+
+### Pre-requisites
+1. Rust
+2. Node
+
+### Starting the dev server
+
+1. Clone the repo
+2. `yarn install`
+3. `yarn tauri dev`
+
+
+## Build
+`yarn tauri build --options` 
+More details here - https://tauri.app/v1/api/cli/#build
