@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.arrow:before {
+  content: "";
+  @apply h-0 w-0  absolute top-0 left-1/2 -translate-x-1/2;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
