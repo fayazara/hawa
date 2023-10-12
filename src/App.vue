@@ -12,7 +12,7 @@
     <footer class="flex w-full items-center justify-end p-1">
       <a
         target="_blank"
-        href="https://github.com/fayazara/vibin"
+        href="https://github.com/fayazara/hawa"
         class="h-7 w-7 flex items-center justify-center rounded-md hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
       >
         <GithubIcon class="h-4 w-4 text-gray-500" />
