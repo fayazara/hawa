@@ -6,6 +6,7 @@ Hawa is a simple, lightweight app that lives in your menubar that plays ambient 
 
 
 Demo - (Turn on sound 🔊) 
+
 https://github.com/fayazara/hawa/assets/15716057/e4d676b5-b6e4-445a-89d2-2d8298dcf211
 
 
