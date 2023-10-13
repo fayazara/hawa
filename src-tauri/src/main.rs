@@ -3,14 +3,22 @@
     windows_subsystem = "windows"
 )]
 
+
+use std::env;
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
 use tauri_plugin_positioner::{Position, WindowExt};
 
 fn main() {
-    let quit = CustomMenuItem::new("quit".to_string(), "Quit").accelerator("Cmd+Q");
-    let open = CustomMenuItem::new("open".to_string(), "Open");
+    let mut system_tray_menu = SystemTrayMenu::new();
 
-    let system_tray_menu = SystemTrayMenu::new().add_item(open).add_item(quit);
+    if cfg!(target_os = "linux") {
+        let open = CustomMenuItem::new("open".to_string(), "Open").accelerator("Cmd+H");
+        system_tray_menu = system_tray_menu.clone().add_item(open);
+    }
+
+    let quit = CustomMenuItem::new("quit".to_string(), "Quit").accelerator("Cmd+Q");
+    system_tray_menu = system_tray_menu.clone().add_item(quit);
+
     tauri::Builder::default()
         .plugin(tauri_plugin_positioner::init())
         .system_tray(SystemTray::new().with_menu(system_tray_menu))
@@ -49,7 +57,6 @@ fn main() {
                 SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
                     "open" => {
                         let window = app.get_window("main").unwrap();
-                        // let _ = window.move_window(Position::TrayCenter);
                         window.show().unwrap();
                         window.set_focus().unwrap();
                     }
