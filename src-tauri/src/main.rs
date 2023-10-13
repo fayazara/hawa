@@ -12,7 +12,7 @@ fn main() {
     let mut system_tray_menu = SystemTrayMenu::new();
 
     if cfg!(target_os = "linux") {
-        let open = CustomMenuItem::new("open".to_string(), "Open").accelerator("Cmd+H");
+        let open = CustomMenuItem::new("open".to_string(), "Open");
         system_tray_menu = system_tray_menu.clone().add_item(open);
     }
 
