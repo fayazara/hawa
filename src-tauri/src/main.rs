@@ -3,12 +3,22 @@
     windows_subsystem = "windows"
 )]
 
+
+use std::env;
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
 use tauri_plugin_positioner::{Position, WindowExt};
 
 fn main() {
+    let mut system_tray_menu = SystemTrayMenu::new();
+
+    if cfg!(target_os = "linux") {
+        let open = CustomMenuItem::new("open".to_string(), "Open");
+        system_tray_menu = system_tray_menu.clone().add_item(open);
+    }
+
     let quit = CustomMenuItem::new("quit".to_string(), "Quit").accelerator("Cmd+Q");
-    let system_tray_menu = SystemTrayMenu::new().add_item(quit);
+    system_tray_menu = system_tray_menu.clone().add_item(quit);
+
     tauri::Builder::default()
         .plugin(tauri_plugin_positioner::init())
         .system_tray(SystemTray::new().with_menu(system_tray_menu))
@@ -45,6 +55,11 @@ fn main() {
                     println!("system tray received a double click");
                 }
                 SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
+                    "open" => {
+                        let window = app.get_window("main").unwrap();
+                        window.show().unwrap();
+                        window.set_focus().unwrap();
+                    }
                     "quit" => {
                         std::process::exit(0);
                     }
