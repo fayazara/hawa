@@ -37,6 +37,7 @@
 <script setup>
 import { inject } from "vue";
 import { exit } from "@tauri-apps/api/process";
+import { platform } from '@tauri-apps/api/os';
 import Icon from "./components/Icon.vue";
 import GithubIcon from "./components/GithubIcon.vue";
 import Player from "./components/Player.vue";
@@ -86,4 +87,13 @@ const exitApp = async () => {
 const stopAll = () => {
   emitter.emit("stopAll");
 };
+
+const setupOs = async () => {
+  const platformName = await platform();
+  if (platformName) {
+    document.body.classList.add(platformName);
+  }
+};
+
+setupOs();
 </script>
