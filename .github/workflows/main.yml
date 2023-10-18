@@ -1,14 +1,13 @@
 name: 'Publish'
 on:
-  # pull_request:
-  #   branches:
-  #     - main
-  #   types:
-  #     - merged
+  pull_request:
+    branches: 
+      - main
+    types: [closed]
   # workflow_dispatch
-  push:
-     branches:
-       - release
+  # push:
+  #    branches:
+  #      - release
 
 jobs:
   publish-tauri:
