@@ -1,6 +1,6 @@
 name: 'Publish'
 on:
- pull_request:
+  pull_request:
     branches:
       - main
     types:
