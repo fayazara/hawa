@@ -44,3 +44,4 @@ https://github.com/fayazara/hawa/assets/15716057/e4d676b5-b6e4-445a-89d2-2d8298d
 ## Build
 `yarn tauri build --options` 
 More details here - https://tauri.app/v1/api/cli/#build
+
