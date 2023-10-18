@@ -3,7 +3,6 @@
     windows_subsystem = "windows"
 )]
 
-use std::env;
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
 use tauri_plugin_positioner::{Position, WindowExt};
 
