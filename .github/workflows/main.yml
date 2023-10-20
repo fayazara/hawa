@@ -1,8 +1,13 @@
 name: 'Publish'
 on:
-  push:
-    branches:
-      - release
+  pull_request:
+    branches: 
+      - main
+    types: [closed]
+  # workflow_dispatch
+  # push:
+  #    branches:
+  #      - release
 
 jobs:
   publish-tauri:
@@ -11,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest]
+        platform: [macos-latest, ubuntu-20.04, windows-latest]
 
     runs-on: ${{ matrix.platform }}
     steps:
